@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import AuthPage from '../auth/AuthPage.js';
 import CocktailPage from '../cocktails/CocktailPage.js';
-import CocktailDetailPage from '../cocktail-detail.js';
+import CocktailDetailPage from '../cocktail-detail/CocktailDetailPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -15,7 +15,7 @@ import './App.css';
 
 class App extends Component {
   state = {
-    token: window.localStorage.getItem.apply('TOKEN'),
+    token: window.localStorage.getItem('TOKEN'),
     userId: window.localStorage.getItem('USER_ID'),
     userName: window.localStorage.getItem('USER_NAME')
   }
@@ -58,13 +58,13 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/favorites" exact={true}
+              {/* <Route path="/favorites" exact={true}
                 render={routerProps => (
                   token
                     ? <FavoritesPage {...routerProps} />
                     : <Redirect to="/auth" />
                 )}
-              />
+              /> */}
 
               {/* <Route path="/favorites/:id"
                 render={routerProps => (
