@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import { signUp, signIn } from '../utils/cocktails-api';
 import './AuthPage.css';
 
 export default class AuthPage extends Component {
