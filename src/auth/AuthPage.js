@@ -30,6 +30,7 @@ export default class AuthPage extends Component {
       onUser(user);
 
       history.push('/');
+      window.location.reload();
     }
     catch (err) {
       this.setState({ error: err.error });
