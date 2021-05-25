@@ -4,7 +4,6 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import AuthPage from '../auth/AuthPage.js';
 import CocktailPage from '../cocktails/CocktailPage.js';
-import FavoritesPage from '../Favorites/FavoritesPage';
 import {
   BrowserRouter as Router,
   Route,

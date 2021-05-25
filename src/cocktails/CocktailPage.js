@@ -11,7 +11,7 @@ export default class CocktailPage extends Component {
     favorites: [],
     loading: false
   }
-  
+
   async componentDidMount() {
     try {
       this.setState({ loading: true });
@@ -35,9 +35,14 @@ export default class CocktailPage extends Component {
       const cocktails = await getCocktails(search);
 
       const upgradedCocktails = cocktails.map(cocktail => {
-        const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
+
+        //      const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
         // original code on the line below... return found ? found : cocktail
-        return found ? favorites : cocktail;
+        //      return found ? favorites : cocktail;
+
+        const found = favorites.find(favorite => favorite.cocktail.Id === cocktail.cocktailId);
+        return found ? found : cocktail;
+
       });
 
       this.setState({ cocktails: upgradedCocktails });
@@ -65,7 +70,7 @@ export default class CocktailPage extends Component {
             ? {
               cocktailId: cocktail.cocktailId,
               name: cocktail.name,
-            // image: cocktail.image
+              // image: cocktail.image
             }
             : m;
         });
@@ -87,7 +92,7 @@ export default class CocktailPage extends Component {
       console.log(err.message);
     }
     finally {
-      this.setState ({ loading: false });
+      this.setState({ loading: false });
     }
   }
 
@@ -96,9 +101,9 @@ export default class CocktailPage extends Component {
 
     return (
       <div className="CocktailPage">
-        <Loader loading={loading}/> 
-        <CocktailSearch onSearch={this.handleSearch}/>
-        <CocktailList cocktails={cocktails} onFavorited={this.handleFavorited}/> 
+        <Loader loading={loading} />
+        <CocktailSearch onSearch={this.handleSearch} />
+        <CocktailList cocktails={cocktails} onFavorited={this.handleFavorited} />
       </div>
     );
   }
