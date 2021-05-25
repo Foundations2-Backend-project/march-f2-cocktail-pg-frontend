@@ -4,8 +4,13 @@ import './Header.css';
 
 class Header extends Component {
 
-  render() { 
-    const { userName } = this.props;
+  handleLogout = () => {
+    window.localStorage.clear();
+    window.location.reload();
+  }
+
+  render() {
+    //const { userName } = this.props;
 
     return (
       <header className="Header">
@@ -17,18 +22,20 @@ class Header extends Component {
 
         <h1>Cocktail Page</h1>
         <nav>
+          <NavLink to='/aut'>SignIn</NavLink>
           <NavLink to="/" exact={true}>Home</NavLink>
-          <NavLink to="/cocktails">My Favorites</NavLink>
-          { userName
+          <NavLink to="/cocktails">arent these cocktails and not favorites??...My Favorites</NavLink>
+          {userName
             ? <span>Hi {userName}!</span>
             : <NavLink to="/auth">My Account</NavLink>
           }
+          <NavLink to='/auth' onClick={this.handleLogout}>LogOut</NavLink>
         </nav>
-        
+
       </header>
     );
   }
 
 }
- 
+//lorum
 export default Header;
