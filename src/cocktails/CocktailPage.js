@@ -36,7 +36,8 @@ export default class CocktailPage extends Component {
 
       const upgradedCocktails = cocktails.map(cocktail => {
         const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
-        return found ? found : cocktail;
+        // original code on the line below... return found ? found : cocktail
+        return found ? favorites : cocktail;
       });
 
       this.setState({ cocktails: upgradedCocktails });
