@@ -2,7 +2,7 @@ import { Component } from 'react';
 import CocktailList from '../common/CocktailList';
 import CocktailSearch from './CocktailSearch';
 import Loader from '../common/Loader';
-import { addFavorite, deleteFavorite, getMyFavorites, getCocktails } from '../utils/cocktails-api';
+import { getCocktails, addFavorite, deleteFavorite, getMyFavorites } from '../utils/cocktails-api';
 import './CocktailPage.css';
 
 export default class CocktailPage extends Component {
@@ -95,9 +95,9 @@ export default class CocktailPage extends Component {
 
     return (
       <div className="CocktailPage">
-        <Loader loading={loading}/>
+        <Loader loading={loading}/> 
         <CocktailSearch onSearch={this.handleSearch}/>
-        <CocktailList cocktails={cocktails} onFavorited={this.handleFavorited}/>
+        <CocktailList cocktails={cocktails} onFavorited={this.handleFavorited}/> 
       </div>
     );
   }
