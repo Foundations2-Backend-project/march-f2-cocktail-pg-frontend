@@ -24,11 +24,15 @@ export default class CocktailDetailPage extends Component {
   }
 
   render() {
+    const { cocktail } = this.state;
     return (
       <section className="CocktailDetailPage">
-        <pre>
-          {JSON.stringify(cocktail, true, 2)}
-        </pre>
+        {/* <pre> */}
+        {/* {JSON.stringify(cocktail, true, 2)} */}
+        {/* </pre> */}
+        <p>
+          { cocktail }
+        </p>
       </section>
     );
   }
