@@ -29,7 +29,7 @@ export async function getCocktails(search) {
   const response = await request
     .get('/api/cocktails')
     .query({ search: search })
-    .set('AUTHORIZATION', window.localStorage.getItem('TOKEN'));
+    .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   return response.bod;
 }
@@ -37,7 +37,7 @@ export async function getCocktails(search) {
 export async function getCocktail(id) {
   const response = await request
     .get(`/api/cocktails/${id}`)
-    .set('AUTHORIZATION', window.localStorage.getItem('TOKEN'));
+    .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   return response.body;
 }
