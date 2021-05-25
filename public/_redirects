@@ -1,2 +1,2 @@
-/api/*  https://your-api-server.herokuapp.com/api/:splat 200!
+/api/*  https://still-brushlands-21142.herokuapp.com/:splat 200!
 /*      /index.html   200

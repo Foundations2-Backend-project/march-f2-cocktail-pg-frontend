@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import AuthPage from '../auth/AuthPage.js';
 import CocktailPage from '../cocktails/CocktailPage.js';
-import CocktailDetailPage from '../cocktail-detail/CocktailDetailPage';
+import FavoritesPage from '../favorites/FavoritesPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -33,38 +33,38 @@ class App extends Component {
     return (
       <div className="App">
         <Router>
-          <Header userName={userName} />
+          <Header userName={userName}/>
           <main>
 
             <Switch>
               <Route path="/" exact={true}
                 render={routerProps => (
-                  <Home {...routerProps} />
+                  <Home {...routerProps}/>
                 )}
               />
 
               <Route path="/auth" exact={true}
                 render={routerProps => (
                   <AuthPage {...routerProps}
-                    onUser={this.handleUser} />
+                    onUser={this.handleUser}/>
                 )}
               />
 
-              <Route path="/cocktail" exact={true}
+              <Route path="/cocktails" exact={true}
                 render={routerProps => (
                   token
-                    ? <CocktailPage {...routerProps} />
-                    : <Redirect to="/auth" />
+                    ? <CocktailPage {...routerProps}/>
+                    : <Redirect to="/auth"/>
                 )}
               />
 
-              {/* <Route path="/favorites" exact={true}
+              <Route path="/favorites" exact={true}
                 render={routerProps => (
                   token
-                    ? <FavoritesPage {...routerProps} />
-                    : <Redirect to="/auth" />
+                    ? <FavoritesPage {...routerProps}/>
+                    : <Redirect to="/auth"/>
                 )}
-              /> */}
+              />
 
               {/* <Route path="/favorites/:id"
                 render={routerProps => (
@@ -76,7 +76,7 @@ class App extends Component {
 
             </Switch>
           </main>
-          <Footer />
+          <Footer/>
         </Router>
       </div>
     );
