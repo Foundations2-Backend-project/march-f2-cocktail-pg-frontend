@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-import React, { Component } from 'react';
-
-export default class CocktailPage extends Component {
-    render() {
-        return (
-            <div>
-                <p>Hello</p>
-            </div>
-        );
-    }
-}
-=======
 import { Component } from 'react';
 import CocktailList from '../common/CocktailList';
 import CocktailSearch from './CocktailSearch';
@@ -122,4 +109,3 @@ export default class CocktailPage extends Component {
   }
 
 }
->>>>>>> 1127010a12cb2f708fdb64421c341f2869aec60d
