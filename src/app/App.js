@@ -85,4 +85,8 @@ class App extends Component {
 }
 
 //what does the fox say?
+<<<<<<< HEAD
 export default App;
+=======
+export default App;
+>>>>>>> 333e2fa17859281f47beb769b09449effeae4a1b
