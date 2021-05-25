@@ -1,4 +1,4 @@
-import request from 'superagent';
+import request, { search } from 'superagent';
 
 export async function signUp(credentials) {
   const response = await request
@@ -22,6 +22,23 @@ export async function signIn(credentials) {
   if (response.status === 400) {
     throw response.body;
   }
+  return response.body;
+}
+
+export async function getCocktails(search) {
+  const response = await request
+    .get('/api/cocktails')
+    .query({ search: search })
+    .set('AUTHORIZATION', window.localStorage.getItem('TOKEN'));
+
+  return response.bod;
+}
+
+export async function getCocktail(id) {
+  const response = await request
+    .get(`/api/cocktails/${id}`)
+    .set('AUTHORIZATION', window.localStorage.getItem('TOKEN'));
+
   return response.body;
 }
 
