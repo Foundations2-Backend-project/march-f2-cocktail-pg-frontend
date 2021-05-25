@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { getCocktails } from '../utils/cocktails-api';
+import { getCocktail } from '../utils/cocktails-api';
 import './CocktailDetailPage.css';
 
 export default class CocktailDetailPage extends Component {
@@ -12,14 +12,14 @@ export default class CocktailDetailPage extends Component {
       const { match } = this.props;
       this.setState({ loading: true });
 
-      const cocktail = await getCocktails(match.params.id);
+      const cocktail = await getCocktail(match.params.id);
       this.setState({ cocktail: cocktail });
     }
     catch (err) {
       console.log(err.message);
     }
     finally {
-      this.setState ({ loading: false });
+      this.setState({ loading: false });
     }
   }
 
@@ -27,7 +27,7 @@ export default class CocktailDetailPage extends Component {
     return (
       <section className="CocktailDetailPage">
         <pre>
-          {/* {JSON.stringify(cocktail, true, 2)} */}
+          {JSON.stringify(cocktail, true, 2)}
         </pre>
       </section>
     );
