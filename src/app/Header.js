@@ -10,7 +10,7 @@ class Header extends Component {
   }
 
   render() {
-    //const { userName } = this.props;
+    const { userName } = this.props;
 
     return (
       <header className="Header">
@@ -22,9 +22,10 @@ class Header extends Component {
 
         <h1>Cocktail Page</h1>
         <nav>
-          <NavLink to='/aut'>SignIn</NavLink>
+          <NavLink to='/auth'>SignIn</NavLink>
           <NavLink to="/" exact={true}>Home</NavLink>
-          <NavLink to="/cocktails">arent these cocktails and not favorites??...My Favorites</NavLink>
+          <NavLink to="/cocktails">Cocktails</NavLink>
+          <NavLink to="/favorites">My Favorites</NavLink>
           {userName
             ? <span>Hi {userName}!</span>
             : <NavLink to="/auth">My Account</NavLink>
