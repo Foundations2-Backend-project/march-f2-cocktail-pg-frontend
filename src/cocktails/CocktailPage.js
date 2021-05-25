@@ -35,7 +35,7 @@ export default class CocktailPage extends Component {
       const cocktails = await getCocktails(search);
 
       const upgradedCocktails = cocktails.map(cocktail => {
-        const found = cocktails.find(favorite => favorite.cocktail.Id === cocktail.cocktailId);
+        const found = favorites.find(favorite => favorite.cocktail.Id === cocktail.cocktailId);
         return found ? found : cocktail;
       });
 
@@ -91,6 +91,8 @@ export default class CocktailPage extends Component {
   }
 
   render() {
+    const { cocktails, loading } = this.state;
+
     return (
       <div className="CocktailPage">
         <Loader loading={loading}/>
