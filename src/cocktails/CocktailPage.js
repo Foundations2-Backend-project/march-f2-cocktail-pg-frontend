@@ -54,13 +54,13 @@ export default class CocktailPage extends Component {
       this.setState({ loading: true });
       const { cocktails } = this.state;
 
-      const favorited = cocktail.id;
+      const favoriteId = cocktail.id;
 
-      if (favorited) {
+      if (favoriteId) {
         await deleteFavorite(favoriteId);
 
         const updatedCocktails = cocktails.map(m => {
-          return m.id === favoritedId
+          return m.id === favoriteId
             ? {
               cocktailId: cocktail.cocktailId,
               name: cocktail.name,
