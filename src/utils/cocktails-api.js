@@ -31,7 +31,7 @@ export async function getCocktails(search) {
     .query({ search: search })
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
-  return response.bod;
+  return response.body;
 }
 
 export async function getCocktail(id) {
