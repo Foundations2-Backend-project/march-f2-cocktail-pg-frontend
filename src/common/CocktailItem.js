@@ -19,7 +19,7 @@ class CocktailItem extends Component {
   render() {
     const { isFavorite } = this.state;
     const { cocktail } = this.props;
-
+    console.log(cocktail);
     return (
       <li className="CocktailItem">
         <Link to={`/cocktails/${cocktail.id}`}>
