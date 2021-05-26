@@ -37,5 +37,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8001"
+  "proxy": "https://pure-savannah-10094.herokuapp.com"
 }
