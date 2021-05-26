@@ -2,9 +2,9 @@ import { Component } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import Home from '../home/Home';
-import AuthPage from '../auth/AuthPage.js';
-import CocktailPage from '../cocktails/CocktailPage.js';
-import FavoritesPage from '../Favorites/FavoritesPage.js';
+import AuthPage from '../auth/AuthPage';
+import CocktailPage from '../cocktails/CocktailPage';
+import FavoritesPage from '../Favorites/FavoritesPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -13,7 +13,7 @@ import {
 } from 'react-router-dom';
 import './App.css';
 
-export default class App extends Component {
+class App extends Component {
   state = {
     token: window.localStorage.getItem('TOKEN'),
     userId: window.localStorage.getItem('USER_ID'),
@@ -86,3 +86,4 @@ export default class App extends Component {
 
 //what does the fox say?
 
+export default App;
