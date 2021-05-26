@@ -25,14 +25,16 @@ export default class AuthPage extends Component {
 
     try {
       const action = isSignUp ? signUp : signIn;
-      const user = action(this.state);
+      const user = await action(this.state);
       console.log(user);
       onUser(user);
       
 
-      history.push('/cocktails');
-      window.location.reload();
+      await history.push('/cocktails');
+      // window.location.reload();
     }
+    
+
     catch (err) {
       this.setState({ error: err.error });
     }
