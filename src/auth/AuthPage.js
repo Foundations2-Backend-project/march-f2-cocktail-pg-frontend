@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { signUp, signIn } from '../utils/cocktails-api';
+import { signUp, signIn } from '../utils/cocktails-api.js';
 import './AuthPage.css';
 
 export default class AuthPage extends Component {
@@ -75,7 +75,7 @@ export default class AuthPage extends Component {
         <p>
           <label>
             <span>Password</span>
-            <input name="password" type="password" required={true} value={password} onChange={this.handlePasswordChange} />
+            <input name="email" type="password" required={true} value={password} onChange={this.handlePasswordChange} />
           </label>
         </p>
 
@@ -87,7 +87,7 @@ export default class AuthPage extends Component {
           <button type="button" className="switch" onClick={this.handleSwitch}>
             {isSignUp
               ? 'Already have an account?'
-              : 'Need to create and account?'
+              : 'Need to create an account?'
             }
           </button>
         </p>
