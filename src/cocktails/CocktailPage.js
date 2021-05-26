@@ -30,18 +30,19 @@ export default class CocktailPage extends Component {
   handleSearch = async search => {
     try {
       this.setState({ loading: true });
-      const { favorites } = this.state;
+    //   const { favorites } = this.state;
 
       const cocktails = await getCocktails(search);
-
-      const upgradedCocktails = cocktails.map(cocktail => {
-        const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
+      console.log(cocktails);
+      this.setState({ cocktails: cocktails });
+    //   const upgradedCocktails = cocktails.map(cocktail => {
+    //     const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
         
-        return found ? favorites : cocktail;
+    //     return found ? favorites : cocktail;
 
-      });
+    //   });
 
-      this.setState({ cocktails: upgradedCocktails });
+     
     }
     catch (err) {
       console.log(err.message);
@@ -94,7 +95,7 @@ export default class CocktailPage extends Component {
 
   render() {
     const { cocktails, loading } = this.state;
-
+    console.log(cocktails);
     return (
       <div className="CocktailPage">
         <Loader loading={loading} />

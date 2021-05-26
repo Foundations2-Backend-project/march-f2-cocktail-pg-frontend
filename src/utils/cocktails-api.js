@@ -30,7 +30,7 @@ export async function getCocktails(search) {
     .get('/api/cocktails')
     .query({ search: search })
     .set('Authorization', window.localStorage.getItem('TOKEN'));
-
+  console.log(response.body, 'get cocktails');
   return response.body;
 }
 

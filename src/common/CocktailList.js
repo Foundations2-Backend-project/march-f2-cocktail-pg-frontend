@@ -6,7 +6,7 @@ class CocktailList extends Component {
   
   render() {
     const { cocktails, onFavorited } = this.props;
-
+    console.log(cocktails);
     return (
 
       <ul className="CocktailList">
