@@ -31,7 +31,7 @@ export default class AuthPage extends Component {
       
 
       history.push('/cocktails');
-      // window.location.reload();
+      window.location.reload();
     }
     
 
