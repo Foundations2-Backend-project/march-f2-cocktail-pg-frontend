@@ -23,10 +23,13 @@ class CocktailItem extends Component {
     return (
       <li className="CocktailItem">
         <Link to={`/cocktails/${cocktail.id}`}>
-          <h2>{cocktail.name}</h2>
-          <button className="favorite" onClick={this.handleFavoriteClick}>
-            {isFavorite ? MARTINI : BEER}
-          </button>
+          <label>
+            <h2>{cocktail.name}</h2>
+            <image src={cocktail.image}/>
+            <button className="favorite" onClick={this.handleFavoriteClick}>
+              {isFavorite ? MARTINI : BEER}
+            </button>
+          </label>
         </Link>
       </li>  
     );
