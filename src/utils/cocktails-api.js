@@ -30,11 +30,12 @@ export async function getCocktails(search) {
     .get('/api/cocktails')
     .query({ search: search })
     .set('Authorization', window.localStorage.getItem('TOKEN'));
-  console.log(response.body, 'get cocktails');
+  
   return response.body;
 }
 
 export async function getCocktail(id) {
+  console.log(id);
   const response = await request
     .get(`/api/cocktails/${id}`)
     .set('Authorization', window.localStorage.getItem('TOKEN'));

@@ -1,5 +1,7 @@
 .Footer {
-  padding: 5px;
+  padding: 1px;
   font-size: .8rem;
   background: rgba(0, 0, 0, 0.1);
+  height: 2%;
+  position: fixed;
 }

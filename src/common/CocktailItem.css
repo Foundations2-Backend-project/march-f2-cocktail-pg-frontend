@@ -1,7 +1,9 @@
-li {
-    size: 200px;
+
+.cocktailImage {
+    width: 100px;
+    height: 100px;
 }
 
-image {
-    size: 50px
+.cocktailName {
+    color: gold;
 }

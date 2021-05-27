@@ -33,7 +33,7 @@ export default class CocktailPage extends Component {
       // const { favorites } = this.state;
 
       const cocktails = await getCocktails(search);
-      console.log(cocktails);
+      
       this.setState({ cocktails: cocktails });
       // const upgradedCocktails = cocktails.map(cocktail => {
       //   const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
@@ -57,13 +57,13 @@ export default class CocktailPage extends Component {
       this.setState({ loading: true });
       const { cocktails } = this.state;
 
-      const favoriteId = cocktail.id;
-
+      const favoriteId = cocktail.drinkId;
+      console.log('cocktail id' + cocktails.drinkId);
       if (favoriteId) {
         await deleteFavorite(favoriteId);
 
         const updatedCocktails = cocktails.map(m => {
-          return m.id === favoriteId
+          return m.drinkId === favoriteId
             ? {
               cocktailId: cocktail.cocktailId,
               name: cocktail.name,
