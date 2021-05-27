@@ -1,5 +1,8 @@
 .CocktailList {
-    background-color: rgb(107, 32, 32);
-    border: groove gold 10px;
-    size: inherit;
+    margin: 0;
+    margin-top: 10px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+    grid-gap: 10px;
 }

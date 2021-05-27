@@ -1,9 +1,39 @@
+.CocktailItem a {
+    list-style: none;
+    background: blanchedalmond;
+    border: 1px solid black;
+    position: relative;
 
-.cocktailImage {
-    width: 100px;
-    height: 100px;
+    display: grid; 
+    grid-template-rows: 50px 120px;
+    grid-gap: 10px;
+
+    justify-items: center;
+
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
 }
 
-.cocktailName {
-    color: gold;
+.CocktailItem h2 {
+    margin: 3px 0;
+    text-align: center;
+    font-size: .9rem;
+    line-height: 1.2;
+    font-weight: bolder;
+}
+
+.CocktailItem img {
+    height: 100px;
+    width: 100px;
+}
+
+.CocktailItem .favorite {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    border: 0;
+    background: black;
+    font-size: 1.5rem;
+    cursor: pointer;
 }

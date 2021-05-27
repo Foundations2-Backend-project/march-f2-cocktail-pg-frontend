@@ -1,0 +1,16 @@
+.Home {
+  text-align: center;
+  padding: 5px;
+  color: red;
+  margin: 20px;
+  padding: 40px;
+  background: black;
+  line-height: 18px;
+  height: 18px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.Home > * {
+  margin: 20px;
+}

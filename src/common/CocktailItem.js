@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './CocktailItem.css';
 
@@ -19,7 +19,7 @@ class CocktailItem extends Component {
   render() {
     const { isFavorite } = this.state;
     const { cocktail } = this.props;
-    console.log('its this one' + cocktail);
+    
     return (
       <li className="CocktailItem">
         <Link to={`/cocktails/${cocktail.drinkId}`}>

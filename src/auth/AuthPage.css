@@ -1,0 +1,26 @@
+.AuthPage {
+  width:400px;
+  margin: auto;
+}
+
+.AuthPage label pan {
+  display: block;
+  font-size: .8rem;
+}
+
+.AuthPage p {
+  margin: 10px 0;
+  margin: 20px;
+  padding: 20px;
+  background: black;
+  line-height: 18px;
+  height: 18px;
+  font-size: 18px;
+}
+
+.AuthPage button.switch {
+  border: 0;
+  background: unset;
+  text-decoration: underline;
+  color: white;
+}

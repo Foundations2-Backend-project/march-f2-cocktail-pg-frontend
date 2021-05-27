@@ -18,7 +18,7 @@
 }
 
 .Header nav {
-  justify-self: end;
+  justify-self: center;
 }
 
 .Header nav a {
@@ -28,21 +28,21 @@
   padding: 5px 10px;;
   background: #1F4E5C;
   color: white;
-  font-size: .85rem;
+  font-size: 1rem;
 }
 
 .Header nav span {
   margin-left: 10px;
   padding: 5px 10px;;
-  color: #1F4E5C;
+  color: white;
   font-size: .85rem;
 }
 
 .Header nav a:hover {
-  background: #65A7AB;
+  background: black;
 }
 
 .Header nav a.active {
-  color:#1F4E5C;
-  background: white;
+  color:white;
+  background: #1F4E5C;
 }
