@@ -5,6 +5,11 @@
   grid-template-columns: 50px 1fr 2fr;
   grid-gap: 20px;
   align-items: center;
+  position: fixed;
+  background-color: rgb(24, 23, 23);
+  height: 30px;
+  width: 100%;
+  color: goldenrod
 }
 
 .Header .logo {

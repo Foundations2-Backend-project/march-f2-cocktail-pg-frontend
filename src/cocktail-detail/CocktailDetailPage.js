@@ -4,7 +4,7 @@ import './CocktailDetailPage.css';
 
 export default class CocktailDetailPage extends Component {
   state = {
-    cocktail: null,
+    cocktail: [],
     loading: false
   }
   async componentDidMount() {
@@ -13,7 +13,8 @@ export default class CocktailDetailPage extends Component {
       this.setState({ loading: true });
 
       const cocktail = await getCocktail(match.params.id);
-      this.setState({ cocktail: cocktail });
+      
+      this.setState({ cocktail: cocktail }, () => getCocktail(match.params.id));
     }
     catch (err) {
       console.log(err.message);
@@ -22,16 +23,19 @@ export default class CocktailDetailPage extends Component {
       this.setState({ loading: false });
     }
   }
-
+  
   render() {
+    
     const { cocktail } = this.state;
+    
     return (
       <section className="CocktailDetailPage">
-        {/* <pre> */}
-        {/* {JSON.stringify(cocktail, true, 2)} */}
-        {/* </pre> */}
+        {
+          cocktail.length && <p>{cocktail[0].name}</p>
+        }
+       
         <p>
-          { cocktail }
+          {/* { cocktail } */}
         </p>
       </section>
     );
