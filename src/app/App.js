@@ -12,6 +12,7 @@ import {
   Redirect
 } from 'react-router-dom';
 import './App.css';
+import CocktailDetailPage from '../cocktail-detail/CocktailDetailPage';
 
 class App extends Component {
   state = {
@@ -49,7 +50,7 @@ class App extends Component {
                     onUser={this.handleUser}/>
                 )}
               />
-
+              
               <Route path="/cocktails" exact={true}
                 render={routerProps => (
                   token
@@ -65,7 +66,12 @@ class App extends Component {
                     : <Redirect to="/auth"/>
                 )}
               />
-
+              <Route path="/cocktails/:id" exact={true}
+                render={routerProps => (
+                  token
+                    ? <CocktailDetailPage {...routerProps}/>
+                    : <Redirect to="/auth"/>
+                )}/>
               {/* <Route path="/favorites/:id"
                 render={routerProps => (
                   <div>Implement a page for id {routerProps.match.params.id}</div>
