@@ -1,5 +1,5 @@
 .App {
-  height: 100%;
+  height: 100vh;
   display: grid;
   /* grid-template-rows: 10% 80% 10%; */
 }
@@ -9,8 +9,9 @@ main {
   padding-top: 105px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   background-image: url('../assets2/barbg.jpg');
-
+  background-repeat: repeat;
+  height: 100vh;
 }
 
