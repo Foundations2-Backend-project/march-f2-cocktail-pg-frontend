@@ -1,16 +1,16 @@
 .App {
   height: 100%;
   display: grid;
-  grid-template-rows: 10% 80% 10%;
+  /* grid-template-rows: 10% 80% 10%; */
 }
 
 main {
-  background: #FAF0EA;
-  margin-top: 70px;
+  /* background: #FAF0EA; */
+  padding-top: 105px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url('../assets2/barbg.jpg');
-  height: 90%;
+
 }
 
