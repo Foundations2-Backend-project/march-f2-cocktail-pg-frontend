@@ -1,11 +1,18 @@
 .AuthPage {
   width:400px;
   margin: auto;
+  margin-top: 200px;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  border: solid red 4px;
 }
 
 .AuthPage label pan {
   display: block;
-  font-size: .8rem;
+  font-size: 1rem;
+  margin-top: 10px;
+  
 }
 
 .AuthPage p {
@@ -22,5 +29,24 @@
   border: 0;
   background: unset;
   text-decoration: underline;
-  color: white;
+  color: red;
+  font-size: 20px;
+}
+
+.AuthPage button.signup {
+  color: black;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  display: grid;
+  margin: auto;
+}
+
+.AuthPage span {
+  color: red;
+  padding: 10px;
+  align-items: center;
+  justify-content: center;
+  display: auto;
+  margin: auto;
 }

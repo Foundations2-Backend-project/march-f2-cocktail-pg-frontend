@@ -13,14 +13,14 @@
 .CocktailSearch input {
   width: 200px;
   height: 30px;
-  flex-grow: 2;
+  /* flex-grow: 2; */
   outline: 0;
 }
 
 .CocktailSearch select {
   width: 150px;
   height: 36px;
-  flex-grow: 1;
+  /* flex-grow: 1; */
 }
 
 .CocktailSearch .prompt {

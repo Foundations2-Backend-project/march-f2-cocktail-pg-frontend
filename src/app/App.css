@@ -1,17 +1,17 @@
 .App {
   height: 100vh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
+  display: flex;
+  flex-direction: column;
+  /* grid-template-rows: auto 1fr auto; */
 }
 
-main {
-  overflow: auto;
+/* main {
+  overflow-y: auto;
   padding-top: 105px;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('../assets2/barbg.jpg');
-  height: 100vh;
-
-}
+  /* background-image: url('../assets2/barbg.jpg');
+  height: 100vh; */
+/* } */
 

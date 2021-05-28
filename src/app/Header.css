@@ -1,5 +1,5 @@
 .Header {
-  padding: 20px;
+  padding: 35px;
   border-bottom: 1px solid lightgray;
   display: grid;
   grid-template-columns: 50px 1fr 2fr;
@@ -9,7 +9,7 @@
   background-color: rgb(24, 23, 23);
   height: 30px;
   width: 100%;
-  color: goldenrod
+  color: goldenrod;
 }
 
 .Header .logo {
@@ -19,10 +19,12 @@
 
 .Header nav {
   justify-self: center;
+  display: block;
+  float: right;
 }
 
 .Header nav a {
-  margin-left: 10px;
+  margin-left: 50px;
   text-decoration: none;
   border: 1px solid lightgray;
   padding: 5px 10px;;
@@ -35,7 +37,9 @@
   margin-left: 10px;
   padding: 5px 10px;;
   color: white;
-  font-size: .85rem;
+  font-size: 1rem;
+  border: solid red 3px;
+  font-weight: bold;
 }
 
 .Header nav a:hover {
@@ -46,3 +50,4 @@
   color:white;
   background: #1F4E5C;
 }
+
