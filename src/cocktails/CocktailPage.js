@@ -2,7 +2,7 @@ import { Component } from 'react';
 import CocktailList from '../common/CocktailList';
 import CocktailSearch from './CocktailSearch';
 import Loader from '../common/Loader';
-import { getCocktails, addFavorite, getMyFavorites } from '../utils/cocktails-api';
+import { getCocktails, addFavorite, getMyFavorites, deleteFavorite } from '../utils/cocktails-api.js';
 import './CocktailPage.css';
 
 export default class CocktailPage extends Component {
@@ -26,23 +26,21 @@ export default class CocktailPage extends Component {
       this.setState({ loading: false });
     }
   }
-
   handleSearch = async search => {
     try {
       this.setState({ loading: true });
-      // const { favorites } = this.state;
+      const { favorites } = this.state;
 
-      const cocktails = await getCocktails(search);
+      const booger = await getCocktails(search);
       
-      this.setState({ cocktails: cocktails });
-      // const upgradedCocktails = cocktails.map(cocktail => {
-      //   const found = cocktails.find(favorite => favorite.cocktailId === cocktail.cocktailId);
+      const upgradedCocktails = booger.map(cocktail => {
+        const found = favorites.find(favorite => favorite.drinkId === cocktail.drinkId);
         
-      //   return found ? favorites : cocktail;
+        return found ? found : cocktail;
 
-      // });
+      });
 
-     
+      this.setState({ cocktails: upgradedCocktails });
     }
     catch (err) {
       console.log(err.message);
@@ -51,52 +49,73 @@ export default class CocktailPage extends Component {
       this.setState({ loading: false });
     }
   }
-
   handleFavorited = async cocktail => {
     try {
       this.setState({ loading: true });
       const { cocktails } = this.state;
 
-      // const favoriteId = cocktail.drinkId;
-      console.log('cocktail id' + cocktails.drinkId);
-      // if (favoriteId) {
-      //   await deleteFavorite(favoriteId);
+      const favoriteId = cocktail.id;
 
-      //   const updatedCocktails = cocktails.map(m => {
-      //     return m.drinkId === favoriteId
-      //       ? {
-      //         cocktailId: cocktail.drinkId,
-      //         name: cocktail.name,
-      //         // image: cocktail.image
-      //       }
-      //       : m;
-      //   });
+      if (favoriteId) {
+        await deleteFavorite(favoriteId);
+      
+      
+        const updatedCocktails = cocktails.map(m => {
+          return m.id === favoriteId
+            ? {
+              drinkId: cocktail.idDrink,
+              name: cocktail.strDrink,
+              category: cocktail.strCategory,
+              alcoholPresent: cocktail.strAlcoholic,
+              instructions: cocktail.strInstructions,
+              glass: cocktail.strGlass,
+              image: cocktail.strDrinkThumb,
+              ingredient1: cocktail.strIngredient1,
+              ingredient2: cocktail.strIngredient2,
+              ingredient3: cocktail.strIngredient3,
+              ingredient4: cocktail.strIngredient4,
+              ingredient5: cocktail.strIngredient5,
+              ingredient6: cocktail.strIngredient6,
+              ingredient7: cocktail.strIngredient7,
+              ingredient8: cocktail.strIngredient8,
+              ingredient9: cocktail.strIngredient9,
+              ingredient10: cocktail.strIngredient10,
+              ingredient11: cocktail.strIngredient11,
+              ingredient12: cocktail.strIngredient12,
+              ingredient13: cocktail.strIngredient13,
+              ingredient14: cocktail.strIngredient14,
+              ingredient15: cocktail.strIngredient15
 
-      //   this.setState({ cocktails: updatedCocktails });
-      // }
-      // else {
-      const addedFavorite = await addFavorite(cocktail);
-      console.log(cocktails, 'cocktailll');
-      console.log(addedFavorite, 'addedd favorites');
-      const updatedCocktails = cocktails.map(m => {
-        return m.drinkId === addedFavorite.drinkId ? addedFavorite : m;
-      });
+            }
+            : m;
+        });
+    
+        this.setState({ cocktails: updatedCocktails });
+      }
+      else {
+        const addedFavorite = await addFavorite(cocktail);
 
-      this.setState({ cocktails: updatedCocktails });
+        const updatedCocktails = cocktails.map(m => {
+          return m.cocktailId === addedFavorite.cocktailId ? addedFavorite : m;
+        });
+
+        this.setState({ cocktails: updatedCocktails });
+      }
     }
-    
-    
     catch (err) {
       console.log(err.message);
+    
     }
     finally {
       this.setState({ loading: false });
-    }
+    };
   }
+  
+
 
   render() {
     const { cocktails, loading } = this.state;
-    console.log(cocktails);
+    
     return (
       <div className="CocktailPage">
         <Loader loading={loading} />
@@ -105,5 +124,6 @@ export default class CocktailPage extends Component {
       </div>
     );
   }
+
 
 }

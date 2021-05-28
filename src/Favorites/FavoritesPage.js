@@ -57,7 +57,7 @@ export default class FavoritesPage extends Component {
     return (
       <div className="FavoritesPage">
         <Loader loading={loading} />
-        <CocktailList cocktails={favorites} onFavorited={this.handleFavorited} />
+        <CocktailList cocktails={favorites} onFavorited={this.handleFavorited}/>
       </div>
     );
   }

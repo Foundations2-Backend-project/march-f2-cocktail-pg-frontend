@@ -4,7 +4,7 @@ import './CocktailDetailPage.css';
 
 export default class CocktailDetailPage extends Component {
   state = {
-    cocktail: [],
+    cocktail: null,
     loading: false
   }
   async componentDidMount() {
@@ -14,7 +14,7 @@ export default class CocktailDetailPage extends Component {
 
       const cocktail = await getCocktail(match.params.id);
       
-      this.setState({ cocktail: cocktail }, () => getCocktail(match.params.id));
+      this.setState({ cocktail: cocktail });
     }
     catch (err) {
       console.log(err.message);
@@ -25,20 +25,12 @@ export default class CocktailDetailPage extends Component {
   }
   
   render() {
-    
     const { cocktail } = this.state;
-    
     return (
       <section className="CocktailDetailPage">
-        <label>
-          {
-            cocktail.length && <p>{cocktail[0].name}</p>
-          }
-       
-          {
-            cocktail.length && <img src={cocktail[0].image} alt={cocktail.name}/>
-          }
-        </label>
+        <pre>
+          {JSON.stringify(cocktail, true, 2)}
+        </pre>
       </section>
     );
   }
