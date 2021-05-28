@@ -63,13 +63,13 @@ export default class CocktailPage extends Component {
         const updatedCocktails = cocktails.map(m => {
           return m.id === favoriteId
             ? {
-              drinkId: cocktail.idDrink,
-              name: cocktail.strDrink,
-              category: cocktail.strCategory,
-              alcoholPresent: cocktail.strAlcoholic,
-              instructions: cocktail.strInstructions,
-              glass: cocktail.strGlass,
-              image: cocktail.strDrinkThumb
+              drinkId: m.idDrink,
+              name: m.strDrink,
+              category: m.strCategory,
+              alcoholPresent: m.strAlcoholic,
+              instructions: m.strInstructions,
+              glass: m.strGlass,
+              image: m.strDrinkThumb
 
             }
             : m;
@@ -81,7 +81,7 @@ export default class CocktailPage extends Component {
         const addedFavorite = await addFavorite(cocktail);
 
         const updatedCocktails = cocktails.map(m => {
-          return m.cocktailId === addedFavorite.cocktailId ? addedFavorite : m;
+          return m.drinkId === addedFavorite.drinkId ? addedFavorite : m;
         });
 
         this.setState({ cocktails: updatedCocktails });
