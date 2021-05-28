@@ -20,7 +20,7 @@ class Header extends Component {
           src="/purple-cocktail.jpeg"
         />
 
-        <h1>Cocktail Page</h1>
+        <h1>Cocktails Search Website</h1>
         <nav>
           <NavLink to='/auth'>SignIn</NavLink>
           <NavLink to="/" exact={true}>Home</NavLink>

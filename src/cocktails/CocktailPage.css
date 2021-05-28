@@ -1,6 +1,6 @@
 .CocktailPage {
   padding: 20px;
-  border: solid blue 5px;
+  background-color: black;
   margin-top: 100px;
   display: flex;
             flex-direction: column;
