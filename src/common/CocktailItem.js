@@ -7,7 +7,7 @@ const BEER = '🍺';
 
 class CocktailItem extends Component {
   state = {
-    isFavorite: false
+    isFavorite: Boolean(this.props.cocktail.id)
   }
   handleFavoriteClick = e => {
     const { onFavorited, cocktail } = this.props;

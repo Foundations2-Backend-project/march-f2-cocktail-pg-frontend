@@ -1,5 +1,5 @@
 .CocktailSearch {
-  padding: 10px 20px;
+  padding: 10px 10px;
   background: black;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -12,23 +12,28 @@
 
 .CocktailSearch input {
   width: 200px;
-  height: 30px;
-  /* flex-grow: 2; */
+  height: 45px;
   outline: 0;
+  background-color: black;
+  color: white;
+  border: solid white 2px;
 }
 
 .CocktailSearch select {
   width: 150px;
   height: 36px;
-  /* flex-grow: 1; */
-}
-
-.CocktailSearch .prompt {
-  color: palegreen;
 }
 
 .CocktailSearch button {
-  height: 36px;
-  width: 36px;
+  height: 50px;
+  width: 50px;
   cursor: pointer;
+}
+
+.CocktailSearch h2 {
+  font-size: 30px;
+  padding: 10px;
+  text-decoration: underline;
+  font-weight: bold;
+  color:white;
 }

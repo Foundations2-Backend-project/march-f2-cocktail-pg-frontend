@@ -9,7 +9,7 @@ export default class Loader extends Component {
 
     return (
       <div className="Loader">
-        {/* <img src="loading.jpeg" alt="loading..." /> */}
+        Loading
       </div>
     );
   }

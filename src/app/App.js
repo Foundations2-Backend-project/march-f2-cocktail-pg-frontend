@@ -4,7 +4,7 @@ import Footer from './Footer';
 import Home from '../home/Home';
 import AuthPage from '../auth/AuthPage';
 import CocktailPage from '../cocktails/CocktailPage';
-import FavoritesPage from '../Favorites/FavoritesPage';
+import FavoritesPage from '../favorites/FavoritesPage';
 import {
   BrowserRouter as Router,
   Route,
@@ -59,7 +59,7 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/Favorites" exact={true}
+              <Route path="/favorites" exact={true}
                 render={routerProps => (
                   token
                     ? <FavoritesPage {...routerProps}/>
@@ -72,11 +72,11 @@ class App extends Component {
                     ? <CocktailDetailPage {...routerProps}/>
                     : <Redirect to="/auth"/>
                 )}/>
-              {/* <Route path="/favorites/:id"
+              <Route path="/favorites/:id"
                 render={routerProps => (
                   <div>Implement a page for id {routerProps.match.params.id}</div>
                 )}
-              /> */}
+              />
 
               <Redirect to="/" />
 
