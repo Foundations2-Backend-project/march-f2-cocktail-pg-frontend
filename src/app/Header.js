@@ -20,12 +20,12 @@ class Header extends Component {
           src="/purple-cocktail.jpeg"
         />
 
-        <h1>Cocktail Page</h1>
+        <h1>Cocktails Search Website</h1>
         <nav>
           <NavLink to='/auth'>SignIn</NavLink>
           <NavLink to="/" exact={true}>Home</NavLink>
           <NavLink to="/cocktails">Cocktails</NavLink>
-          <NavLink to="/favorites">My Favorites</NavLink>
+          <NavLink to="/Favorites">My Favorites</NavLink>
           {userName
             ? <span>Hi {userName}!</span>
             : <NavLink to="/auth">My Account</NavLink>

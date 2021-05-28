@@ -59,7 +59,7 @@ class App extends Component {
                 )}
               />
 
-              <Route path="/favorites" exact={true}
+              <Route path="/Favorites" exact={true}
                 render={routerProps => (
                   token
                     ? <FavoritesPage {...routerProps}/>

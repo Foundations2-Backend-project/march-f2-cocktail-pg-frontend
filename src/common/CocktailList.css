@@ -1,5 +1,10 @@
 .CocktailList {
-    background-color: rgb(107, 32, 32);
-    border: groove gold 10px;
-    size: unset;
+    margin-top: 50px;
+    padding: 10px;
+    display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
 }

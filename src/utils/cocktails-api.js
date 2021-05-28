@@ -45,7 +45,7 @@ export async function getCocktail(id) {
 
 export async function getMyFavorites() {
   const response = await request 
-    .get('/api/me/favorites')
+    .get('/api/me/Favorites')
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   return response.body;
@@ -54,16 +54,16 @@ export async function getMyFavorites() {
 
 export async function deleteFavorite(id) {
   const response = await request
-    .delete(`/api/favorites/${id}`)
+    .post('/api/Favorites')
+    .send(favorite)
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   return response.body;
 }
 
-export function addFavorite(favorite) {
-  const response = request
-    .post('/api/favorites')
-    .send(favorite)
+export async function deleteFavorite(id) {
+  const response = await request
+    .delete(`/api/Favorites/${id}`)
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   if (response.status === 400) {

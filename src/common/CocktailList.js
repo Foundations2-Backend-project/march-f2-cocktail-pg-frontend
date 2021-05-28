@@ -6,9 +6,9 @@ class CocktailList extends Component {
   
   render() {
     const { cocktails, onFavorited } = this.props;
-    console.log(cocktails, 'line 9');
+    
     return (
-
+        
       <ul className="CocktailList">
         {cocktails.map(cocktail => (
           <CocktailItem key={cocktail.drinkId + cocktail.name} cocktail={cocktail} onFavorited={onFavorited}/>

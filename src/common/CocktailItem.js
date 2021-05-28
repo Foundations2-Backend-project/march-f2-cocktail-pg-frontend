@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './CocktailItem.css';
 
@@ -19,24 +19,27 @@ class CocktailItem extends Component {
   render() {
     const { isFavorite } = this.state;
     const { cocktail } = this.props;
-    console.log('its this one' + cocktail);
+          
     return (
+            
       <li className="CocktailItem">
         <Link to={`/cocktails/${cocktail.drinkId}`}>
           <label>
             <h2 className="cocktailName">{cocktail.name}</h2>
             <img className="cocktailImage" src={cocktail.image} alt={cocktail.name}/>
-            
+                  
             <button className="favorite" onClick={this.handleFavoriteClick}>
               {isFavorite ? MARTINI : BEER}
             </button>
-            
+                  
           </label>
         </Link>
       </li>  
     );
+    
+        
+        
   }
-
 }
 
 export default CocktailItem;
