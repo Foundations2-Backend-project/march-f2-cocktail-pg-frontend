@@ -54,16 +54,16 @@ export async function getMyFavorites() {
 
 export async function deleteFavorite(id) {
   const response = await request
-    .post('/api/Favorites')
-    .send(favorite)
+    .delete(`/api/favorites/${id}`)
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   return response.body;
 }
 
-export async function deleteFavorite(id) {
-  const response = await request
-    .delete(`/api/Favorites/${id}`)
+export function addFavorite(favorite) {
+  const response = request
+    .post('/api/favorites')
+    .send(favorite)
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   if (response.status === 400) {
