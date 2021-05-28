@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { getCocktail } from '../utils/cocktails-api';
+import { getCocktail } from '../utils/cocktails-api.js';
 import './CocktailDetailPage.css';
 export default class CocktailDetailPage extends Component {
   state = {
@@ -10,7 +10,9 @@ export default class CocktailDetailPage extends Component {
     try {
       const { match } = this.props;
       this.setState({ loading: true });
+      console.log(match.params.id, 'this two');
       const cocktail = await getCocktail(match.params.id);
+      console.log(cocktail, 'this one');
       this.setState({ cocktail: cocktail }, () => getCocktail(match.params.id));
     }
     catch (err) {
@@ -22,6 +24,7 @@ export default class CocktailDetailPage extends Component {
   }
   render() {
     const { cocktail } = this.state;
+    console.log(cocktail, 'ff');
     return (
       <section className="CocktailDetailPage">
         <label className="drinkLabel">
@@ -29,73 +32,73 @@ export default class CocktailDetailPage extends Component {
             <p className="ingredientsTitle">Ingredients</p>
             <div className="ingredients">
               {
-                cocktail.length && <p>{cocktail[0].ingredient1}</p>
+                cocktail && <p>{cocktail.ingredient1}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient2}</p>
+                cocktail && <p>{cocktail.ingredient2}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient3}</p>
+                cocktail && <p>{cocktail.ingredient3}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient4}</p>
+                cocktail && <p>{cocktail.ingredient4}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient5}</p>
+                cocktail && <p>{cocktail.ingredient5}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient6}</p>
+                cocktail && <p>{cocktail.ingredient6}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient7}</p>
+                cocktail && <p>{cocktail.ingredient7}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient8}</p>
+                cocktail && <p>{cocktail.ingredient8}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient9}</p>
+                cocktail && <p>{cocktail.ingredient9}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient10}</p>
+                cocktail && <p>{cocktail.ingredient10}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient11}</p>
+                cocktail && <p>{cocktail.ingredient11}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient12}</p>
+                cocktail && <p>{cocktail.ingredient12}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient13}</p>
+                cocktail && <p>{cocktail.ingredient13}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient14}</p>
+                cocktail && <p>{cocktail.ingredient14}</p>
               }
               {
-                cocktail.length && <p>{cocktail[0].ingredient15}</p>
+                cocktail && <p>{cocktail.ingredient15}</p>
               }
             </div>
           </span>
           <span className="middleRow">
             <div className="drinkName">
               {
-                cocktail.length && <p>{cocktail[0].name}</p>
+                cocktail && <p>{cocktail.name}</p>
               }
             </div>
             <div className="drinkImage">
               {
-                cocktail.length && <img className="drinkImg" src={cocktail[0].image} alt={cocktail.name}/>
+                cocktail && <img className="drinkImg" src={cocktail.image} alt={cocktail.name}/>
               }
             </div>
           </span>
           <span className="rightRow">
             <div className="drinkGlass">
               <p>Served in a:  {
-                cocktail.length && <p>{cocktail[0].glass}</p>
+                cocktail && <p>{cocktail.glass}</p>
               }</p> 
             </div>
             <div className="drinkInstructions">
               {
-                cocktail.length && <p className="instructionText">{cocktail[0].instructions}</p>
+                cocktail && <p className="instructionText">{cocktail.instructions}</p>
               }
             </div>
           </span>

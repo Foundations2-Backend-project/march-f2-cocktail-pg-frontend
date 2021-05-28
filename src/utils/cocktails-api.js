@@ -38,7 +38,7 @@ export async function getCocktail(id) {
   const response = await request
     .get(`/api/cocktails/${id}`)
     .set('Authorization', window.localStorage.getItem('TOKEN'));
-
+  console.log(response.body, 'response');
   return response.body;
 }
 
