@@ -51,7 +51,8 @@ export async function getMyFavorites() {
   return response.body;
 }
 
-export async function addFavorite(favorite) {
+
+export async function deleteFavorite(id) {
   const response = await request
     .post('/api/Favorites')
     .send(favorite)
@@ -65,5 +66,8 @@ export async function deleteFavorite(id) {
     .delete(`/api/Favorites/${id}`)
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
+  if (response.status === 400) {
+    throw response.body;
+  }
   return response.body;
-}
+};

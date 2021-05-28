@@ -2,7 +2,7 @@ import { Component } from 'react';
 import CocktailList from '../common/CocktailList';
 import CocktailSearch from './CocktailSearch';
 import Loader from '../common/Loader';
-import { getCocktails, addFavorite, deleteFavorite, getMyFavorites } from '../utils/cocktails-api';
+import { getCocktails, addFavorite, getMyFavorites } from '../utils/cocktails-api';
 import './CocktailPage.css';
 
 export default class CocktailPage extends Component {
@@ -57,34 +57,35 @@ export default class CocktailPage extends Component {
       this.setState({ loading: true });
       const { cocktails } = this.state;
 
-      const favoriteId = cocktail.drinkId;
+      // const favoriteId = cocktail.drinkId;
       console.log('cocktail id' + cocktails.drinkId);
-      if (favoriteId) {
-        await deleteFavorite(favoriteId);
+      // if (favoriteId) {
+      //   await deleteFavorite(favoriteId);
 
-        const updatedCocktails = cocktails.map(m => {
-          return m.drinkId === favoriteId
-            ? {
-              cocktailId: cocktail.cocktailId,
-              name: cocktail.name,
-              // image: cocktail.image
-            }
-            : m;
-        });
+      //   const updatedCocktails = cocktails.map(m => {
+      //     return m.drinkId === favoriteId
+      //       ? {
+      //         cocktailId: cocktail.drinkId,
+      //         name: cocktail.name,
+      //         // image: cocktail.image
+      //       }
+      //       : m;
+      //   });
 
-        this.setState({ cocktails: updatedCocktails });
-      }
-      else {
-        const addedFavorite = await addFavorite(cocktail);
+      //   this.setState({ cocktails: updatedCocktails });
+      // }
+      // else {
+      const addedFavorite = await addFavorite(cocktail);
+      console.log(cocktails, 'cocktailll');
+      console.log(addedFavorite, 'addedd favorites');
+      const updatedCocktails = cocktails.map(m => {
+        return m.drinkId === addedFavorite.drinkId ? addedFavorite : m;
+      });
 
-        const updatedCocktails = cocktails.map(m => {
-          return m.cocktailId === addedFavorite.cocktailId ? addedFavorite : m;
-        });
-
-        this.setState({ cocktails: updatedCocktails });
-      }
-
+      this.setState({ cocktails: updatedCocktails });
     }
+    
+    
     catch (err) {
       console.log(err.message);
     }
