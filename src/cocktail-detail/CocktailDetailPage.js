@@ -92,9 +92,9 @@ export default class CocktailDetailPage extends Component {
           </span>
           <span className="rightRow">
             <div className="drinkGlass">
-              <p>Served in a:  {
+              <p className="serveTitle">Served in a:</p>   {
                 cocktail && <p>{cocktail.glass}</p>
-              }</p> 
+              }
             </div>
             <div className="drinkInstructions">
               {

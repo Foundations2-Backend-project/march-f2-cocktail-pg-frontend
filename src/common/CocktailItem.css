@@ -23,7 +23,7 @@
     text-decoration: none;
     color: black;
     cursor: pointer;
-    overflow: scroll;
+    overflow: hidden;
 }
 
 .CocktailItem h2 {

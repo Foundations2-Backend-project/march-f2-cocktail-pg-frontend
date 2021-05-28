@@ -14,5 +14,18 @@
 }
 
 .CocktailDetailPage pre {
-  color: whitesmoke;
+  color: rgb(143, 143, 143);
+}
+
+.drinkName{ 
+    text-align: center;
+    font-size: xx-large;
+}
+
+.ingredientsTitle {
+    font-size: xx-large;
+}
+
+.serveTitle {
+    font-size: xx-large;
 }
