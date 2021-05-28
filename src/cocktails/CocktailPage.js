@@ -2,7 +2,7 @@ import { Component } from 'react';
 import CocktailList from '../common/CocktailList';
 import CocktailSearch from './CocktailSearch';
 import Loader from '../common/Loader';
-import { getCocktails, addFavorite, deleteFavorite, getMyFavorites } from '../utils/cocktails-api';
+import { getCocktails, addFavorite, getMyFavorites } from '../utils/cocktails-api';
 import './CocktailPage.css';
 
 export default class CocktailPage extends Component {
