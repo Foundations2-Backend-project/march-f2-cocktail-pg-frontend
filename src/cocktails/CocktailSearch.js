@@ -21,8 +21,11 @@ export default class CocktailSearch extends Component {
       const { search } = this.state;
 
       return (
+        
         <form className="CocktailSearch" onSubmit={this.handleSubmit}>
+          <h2>Go ahead...search for a cocktail...I dare you:</h2>
           <input value={search} onChange={this.handleChange}/>
+          
           <button>🔎</button>
         </form>
       );

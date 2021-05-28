@@ -1,13 +1,35 @@
-.Home {
+.Home{
+  background-color: black;
+}
+.Home h2 {
   text-align: center;
   color: red;
   font-family: cursive;
   margin: 20px;
-  padding: 40px;
+  padding-top: 20px;
   background: black;
   line-height: 18px;
   height: 18px;
-  font-size: 60px;
+  font-size: 50px;
   margin-top: 200px;
 }
 
+.Home h3 {
+  text-align: center;
+  color: red;
+  margin: 10px;
+  padding: 60px;
+  background: black;
+  line-height: 18px;
+  height: 18px;
+  font-size: 40px;
+  margin-top: 200px;
+}
+
+.Home ul {
+  text-align: center;
+  font-size: 20px;
+  padding: 30px;
+  color:red;
+  background-color: black;
+}

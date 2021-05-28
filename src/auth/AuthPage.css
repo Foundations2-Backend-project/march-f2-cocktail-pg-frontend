@@ -6,6 +6,8 @@
   justify-content: center;
   display: grid;
   border: solid red 4px;
+  text-align:center;
+  background-color: black;
 }
 
 .AuthPage label pan {
