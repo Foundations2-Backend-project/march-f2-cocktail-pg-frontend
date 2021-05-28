@@ -1,35 +1,40 @@
 .Home{
+  color: white;
   background-color: black;
+  padding: 10px;
 }
 .Home h2 {
   text-align: center;
-  color: red;
-  font-family: cursive;
-  margin: 20px;
-  padding-top: 20px;
-  background: black;
-  line-height: 18px;
-  height: 18px;
+  margin: 450px;
   font-size: 50px;
   margin-top: 200px;
+  font-family: 'Crete Round', serif;
+  font-weight: bold;
+  color: white;
+  font-size: 45px;
+  margin-bottom: 20px;
+  border: solid white;
+  transform: rotateZ(360deg);
+  transform-origin: center;
+  transform-style: preserve-3d;
+  background-color: black;
 }
 
 .Home h3 {
+  font-size: 30px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
   text-align: center;
-  color: red;
-  margin: 10px;
-  padding: 60px;
-  background: black;
-  line-height: 18px;
-  height: 18px;
-  font-size: 40px;
-  margin-top: 200px;
+  padding: 20px;
+  background-color: black;
+  padding-left: 20px;
 }
 
 .Home ul {
   text-align: center;
   font-size: 20px;
   padding: 30px;
-  color:red;
+  color:white;
   background-color: black;
 }

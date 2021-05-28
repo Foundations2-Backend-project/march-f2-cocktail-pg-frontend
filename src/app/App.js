@@ -72,11 +72,11 @@ class App extends Component {
                     ? <CocktailDetailPage {...routerProps}/>
                     : <Redirect to="/auth"/>
                 )}/>
-              {/* <Route path="/favorites/:id"
+              <Route path="/favorites/:id"
                 render={routerProps => (
                   <div>Implement a page for id {routerProps.match.params.id}</div>
                 )}
-              /> */}
+              />
 
               <Redirect to="/" />
 

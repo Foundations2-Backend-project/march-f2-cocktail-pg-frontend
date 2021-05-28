@@ -16,11 +16,10 @@ class Header extends Component {
       <header className="Header">
         <img
           className="logo"
-          alt="AA"
-          src="/purple-cocktail.jpeg"
+          alt="tail"
+          src="/cocks-tail.png"
         />
-
-        <h1>Cocktails Search Website</h1>
+        <h1>Cocktails</h1>
         <nav>
           <NavLink to='/auth'>SignIn</NavLink>
           <NavLink to="/" exact={true}>Home</NavLink>

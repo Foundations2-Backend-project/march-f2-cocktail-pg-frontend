@@ -44,7 +44,7 @@ export async function getCocktail(id) {
 
 export async function getMyFavorites() {
   const response = await request 
-    .get('/api/me/Favorites')
+    .get('/api/me/favorites')
     .set('Authorization', window.localStorage.getItem('TOKEN'));
 
   return response.body;

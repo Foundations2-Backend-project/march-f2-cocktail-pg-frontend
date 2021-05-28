@@ -1,12 +1,11 @@
 .Header {
   padding: 35px;
-  border-bottom: 1px solid lightgray;
   display: grid;
   grid-template-columns: 50px 1fr 2fr;
   grid-gap: 20px;
   align-items: center;
   position: fixed;
-  background-color: rgb(24, 23, 23);
+  background-color: black;
   height: 30px;
   width: 100%;
   color: red;
@@ -18,36 +17,45 @@
 }
 
 .Header nav {
-  justify-self: center;
-  display: block;
-  float: right;
+  justify-content: flex-start;
+  align-content: flex-start;
+  display: flex;
+  padding-left: 175px;
 }
 
 .Header nav a {
   margin-left: 50px;
-  text-decoration: none;
-  border: 1px solid lightgray;
-  padding: 5px 10px;;
-  background: #1F4E5C;
-  color: white;
-  font-size: 1rem;
+ 
+  background-color: tomato;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px white;
+  padding: 12px 16px;
+  color:rgb(24, 23, 23);
+  font-weight: bold;
+  border-radius: 10%;
 }
 
 .Header nav span {
-  margin-left: 10px;
-  padding: 5px 10px;;
   color: white;
   font-size: 1rem;
-  border: solid red 3px;
   font-weight: bold;
+  padding-inline-start: 50px;
 }
 
 .Header nav a:hover {
-  background: black;
+  background: white;
+
 }
 
 .Header nav a.active {
-  color:white;
-  background: #1F4E5C;
+  color:rgb(24, 23, 23);
+  background-color: tomato;
+}
+
+.Header h1 {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 

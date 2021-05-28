@@ -1,17 +1,10 @@
 .App {
+  background-image: url('../assets2/Alcohol.jpeg');
+  background-color: white;
+  color: #777;
+  font-style: normal 15px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* grid-template-rows: auto 1fr auto; */
 }
-
-/* main {
-  overflow-y: auto;
-  padding-top: 105px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /* background-image: url('../assets2/barbg.jpg');
-  height: 100vh; */
-/* } */
 
