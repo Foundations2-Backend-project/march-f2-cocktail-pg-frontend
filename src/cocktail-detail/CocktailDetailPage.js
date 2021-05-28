@@ -30,13 +30,15 @@ export default class CocktailDetailPage extends Component {
     
     return (
       <section className="CocktailDetailPage">
-        {
-          cocktail.length && <p>{cocktail[0].name}</p>
-        }
+        <label>
+          {
+            cocktail.length && <p>{cocktail[0].name}</p>
+          }
        
-        <p>
-          {/* { cocktail } */}
-        </p>
+          {
+            cocktail.length && <img src={cocktail[0].image} alt={cocktail.name}/>
+          }
+        </label>
       </section>
     );
   }

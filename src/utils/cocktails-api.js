@@ -51,14 +51,6 @@ export async function getMyFavorites() {
   return response.body;
 }
 
-export async function addFavorite(favorite) {
-  const response = await request
-    .post('/api/favorites')
-    .send(favorite)
-    .set('Authorization', window.localStorage.getItem('TOKEN'));
-
-  return response.body;
-}
 
 export async function deleteFavorite(id) {
   const response = await request
@@ -67,3 +59,15 @@ export async function deleteFavorite(id) {
 
   return response.body;
 }
+
+export function addFavorite(favorite) {
+  const response = request
+    .post('/api/favorites')
+    .send(favorite)
+    .set('Authorization', window.localStorage.getItem('TOKEN'));
+
+  if (response.status === 400) {
+    throw response.body;
+  }
+  return response.body;
+};

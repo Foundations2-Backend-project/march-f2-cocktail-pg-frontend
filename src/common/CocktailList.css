@@ -1,5 +1,5 @@
 .CocktailList {
     background-color: rgb(107, 32, 32);
     border: groove gold 10px;
-    size: inherit;
+    size: unset;
 }
