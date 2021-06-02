@@ -28,13 +28,9 @@ export default class AuthPage extends Component {
       const user = await action(this.state);
       
       onUser(user);
-      
-
-      history.push('/');
-
-    }
     
-
+      history.push('/');
+    }
     catch (err) {
       this.setState({ error: err.error });
     }

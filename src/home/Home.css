@@ -38,3 +38,8 @@
   color:white;
   background-color: black;
 }
+
+.Home li {
+  /* add space between <li> */
+  margin: 10px 0;
+}

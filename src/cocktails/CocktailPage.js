@@ -31,11 +31,10 @@ export default class CocktailPage extends Component {
       this.setState({ loading: true });
       const { favorites } = this.state;
 
-      const booger = await getCocktails(search);
+      const cocktails = await getCocktails(search);
       
-      const upgradedCocktails = booger.map(cocktail => {
+      const upgradedCocktails = cocktails.map(cocktail => {
         const found = favorites.find(favorite => favorite.drinkId === cocktail.drinkId);
-        
         return found ? found : cocktail;
 
       });
@@ -49,6 +48,7 @@ export default class CocktailPage extends Component {
       this.setState({ loading: false });
     }
   }
+
   handleFavorited = async cocktail => {
     try {
       this.setState({ loading: true });
@@ -59,20 +59,18 @@ export default class CocktailPage extends Component {
       if (favoriteId) {
         await deleteFavorite(favoriteId);
       
-      
-        const updatedCocktails = cocktails.map(m => {
-          return m.id === favoriteId
+        const updatedCocktails = cocktails.map(c => {
+          return c.id === favoriteId
             ? {
-              drinkId: m.idDrink,
-              name: m.strDrink,
-              category: m.strCategory,
-              alcoholPresent: m.strAlcoholic,
-              instructions: m.strInstructions,
-              glass: m.strGlass,
-              image: m.strDrinkThumb
-
+              drinkId: c.idDrink,
+              name: c.strDrink,
+              category: c.strCategory,
+              alcoholPresent: c.strAlcoholic,
+              instructions: c.strInstructions,
+              glass: c.strGlass,
+              image: c.strDrinkThumb
             }
-            : m;
+            : c;
         });
     
         this.setState({ cocktails: updatedCocktails });
