@@ -28,13 +28,20 @@ class App extends Component {
     this.setState({ token: user.token });
   }
 
+  // now most of the token, localStorage stuff happens in App.js
+  handleLogout = () => {
+    window.localStorage.clear();
+    // a bit heavy handed, but works!
+    window.location.reload();
+  }
+
   render() {
     const { token, userName } = this.state;
 
     return (
       <div className="App">
         <Router>
-          <Header userName={userName}/>
+          <Header userName={userName} onLogout={this.handleLogout}/>
           <main>
 
             <Switch>
@@ -72,12 +79,7 @@ class App extends Component {
                     ? <CocktailDetailPage {...routerProps}/>
                     : <Redirect to="/auth"/>
                 )}/>
-              <Route path="/favorites/:id"
-                render={routerProps => (
-                  <div>Implement a page for id {routerProps.match.params.id}</div>
-                )}
-              />
-
+              
               <Redirect to="/" />
 
             </Switch>
@@ -91,5 +93,6 @@ class App extends Component {
 }
 
 //what does the fox say?
+// WA-PA-PA-PA-PA-PA-PA-POW! HATEE-HATEE-HATEE-HO! CHACHA-CHACHA-CHACH-CHOW! FRAKA-KAKA-KAKA-KOW!
 
 export default App;

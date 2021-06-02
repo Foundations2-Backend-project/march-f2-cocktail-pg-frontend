@@ -4,13 +4,15 @@ import './Header.css';
 
 class Header extends Component {
 
-  handleLogout = () => {
-    window.localStorage.clear();
-    window.location.reload();
-  }
+  // handleLogout = () => {
+  //   window.localStorage.clear();
+  //   // a bit heavy handed, but works!
+  //   window.location.reload();
+  //   // other option is to pass this back up to App...
+  // }
 
   render() {
-    const { userName } = this.props;
+    const { userName, onLogout } = this.props;
 
     return (
       <header className="Header">
@@ -29,7 +31,7 @@ class Header extends Component {
             ? <span>Hello {userName}!</span>
             : <NavLink to="/auth">My Account</NavLink>
           }
-          <NavLink to='/auth' onClick={this.handleLogout}>LogOut</NavLink>
+          <NavLink to='/auth' onClick={onLogout}>LogOut</NavLink>
         </nav>
 
       </header>

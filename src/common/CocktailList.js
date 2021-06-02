@@ -11,7 +11,10 @@ class CocktailList extends Component {
         
       <ul className="CocktailList">
         {cocktails.map(cocktail => (
-          <CocktailItem key={cocktail.drinkId + cocktail.name} cocktail={cocktail} onFavorited={onFavorited}/>
+          <CocktailItem key={cocktail.drinkId + cocktail.name /* is drinkId not unique??? */} 
+            cocktail={cocktail} 
+            onFavorited={onFavorited}
+          />
         ))}
       </ul>
     );

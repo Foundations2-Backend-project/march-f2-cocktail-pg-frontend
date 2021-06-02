@@ -10,9 +10,8 @@ export default class CocktailDetailPage extends Component {
     try {
       const { match } = this.props;
       this.setState({ loading: true });
-      console.log(match.params.id, 'this two');
+
       const cocktail = await getCocktail(match.params.id);
-      console.log(cocktail, 'this one');
       this.setState({ cocktail: cocktail }, () => getCocktail(match.params.id));
     }
     catch (err) {

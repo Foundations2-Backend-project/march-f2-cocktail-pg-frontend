@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './CocktailItem.css';
 
+// nice use of constants for emoji
 const MARTINI = '🍸';
 const BEER = '🍺';
 
@@ -9,9 +10,10 @@ class CocktailItem extends Component {
   state = {
     isFavorite: Boolean(this.props.cocktail.id)
   }
+  
   handleFavoriteClick = e => {
-    const { onFavorited, cocktail } = this.props;
     e.preventDefault();
+    const { onFavorited, cocktail } = this.props;
     onFavorited(cocktail);
     this.setState({ isFavorite: !this.state.isFavorite });
   }
@@ -24,7 +26,7 @@ class CocktailItem extends Component {
             
       <li className="CocktailItem">
         <Link to={`/cocktails/${cocktail.drinkId}`}>
-          <label>
+          <section>
             <h2 className="cocktailName">{cocktail.name}</h2>
             <img className="cocktailImage" src={cocktail.image} alt={cocktail.name}/>
                   
@@ -32,7 +34,7 @@ class CocktailItem extends Component {
               {isFavorite ? MARTINI : BEER}
             </button>
                   
-          </label>
+          </section>
         </Link>
       </li>  
     );

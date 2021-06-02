@@ -9,7 +9,7 @@ export default class Loader extends Component {
 
     return (
       <div className="Loader">
-        Loading
+        Loading 
       </div>
     );
   }

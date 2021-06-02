@@ -1,4 +1,5 @@
 .App {
+  /* not sure why you created a second assets folder??? */
   background-image: url('../assets2/Alcohol.jpeg');
   background-color: white;
   color: #777;
