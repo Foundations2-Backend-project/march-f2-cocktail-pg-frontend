@@ -17,7 +17,7 @@ class Header extends Component {
         <img
           className="logo"
           alt="tail"
-          src="/cocks-tail.png"
+          src="/Cocktails.png"
         />
         <h1>Cocktails</h1>
         <nav>

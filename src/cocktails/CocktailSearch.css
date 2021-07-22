@@ -3,7 +3,6 @@
   background: black;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
-
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -17,6 +16,7 @@
   background-color: black;
   color: white;
   border: solid white 2px;
+  border-radius: 25px;
 }
 
 .CocktailSearch select {
@@ -28,6 +28,7 @@
   height: 50px;
   width: 50px;
   cursor: pointer;
+  border-radius: 25px;
 }
 
 .CocktailSearch h2 {
@@ -35,5 +36,5 @@
   padding: 10px;
   text-decoration: underline;
   font-weight: bold;
-  color:white;
+  color: white;
 }
