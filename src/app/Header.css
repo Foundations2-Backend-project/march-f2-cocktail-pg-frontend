@@ -25,14 +25,14 @@
 
 .Header nav a {
   margin-left: 50px;
-
+ 
   background-color: tomato;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px white;
   padding: 12px 16px;
-  color: rgb(24, 23, 23);
+  color:rgb(24, 23, 23);
   font-weight: bold;
-  border-radius: 25px;
+  border-radius: 10%;
 }
 
 .Header nav span {
@@ -44,10 +44,11 @@
 
 .Header nav a:hover {
   background: white;
+
 }
 
 .Header nav a.active {
-  color: rgb(24, 23, 23);
+  color:rgb(24, 23, 23);
   background-color: tomato;
 }
 
@@ -57,3 +58,4 @@
   font-weight: bolder;
   text-decoration: underline;
 }
+

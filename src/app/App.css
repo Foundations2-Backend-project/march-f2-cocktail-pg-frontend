@@ -1,9 +1,10 @@
 .App {
-  /* background-image: url('../assets2/Alcohol.jpeg'); */
-  background-color: black;
+  background-image: url('../assets2/Alcohol.jpeg');
+  background-color: white;
   color: #777;
   font-style: normal 15px;
   height: 100vh;
   display: flex;
   flex-direction: column;
 }
+
